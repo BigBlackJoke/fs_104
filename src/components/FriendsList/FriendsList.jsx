@@ -8,8 +8,8 @@ export default function FriendsList({ friends }) {
                     <li key={item.id}>
                         <FriendListItem friend={item} />
                     </li>
-                )
+                );
             })}
         </ul>
     );
-};
+}
