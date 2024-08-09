@@ -1,3 +1,5 @@
+import s from "./Profile.module.css";
+
 export default function Profile({
   name = 'Anonymous',
   tag = 'Anonymous',
@@ -6,29 +8,29 @@ export default function Profile({
   stats = { followers: 0, views: 0, likes: 0 }
 }) {
     return (
-        <div>
-  <div>
-    <img
+        <div className={s.container}>
+  <div className={s.avatar_container}>
+    <img className={s.avatar}
       src={image}
       alt="User avatar"
     />
-    <p>{name}</p>
-    <p>@{tag}</p>
-    <p>{location}</p>
+    <p className={s.user_name}>{name}</p>
+    <p className={s.user_tag}>@{tag}</p>
+    <p className={s.user_location}>{location}</p>
   </div>
 
-  <ul>
-    <li>
-      <span>Followers</span>
-      <span>{stats.followers}</span>
+  <ul className={s.user_data}>
+    <li className={s.user_data_li}>
+      <span className={s.user_data_span}>Followers</span>
+      <span className={s.user_data_span}>{stats.followers}</span>
     </li>
-    <li>
-      <span>Views</span>
-      <span>{stats.views}</span>
+    <li className={s.user_data_li}>
+      <span className={s.user_data_span}>Views</span>
+      <span className={s.user_data_span}>{stats.views}</span>
     </li>
-    <li>
-      <span>Likes</span>
-      <span>{stats.likes}</span>
+    <li className={s.user_data_li}>
+      <span className={s.user_data_span}>Likes</span>
+      <span className={s.user_data_span}>{stats.likes}</span>
     </li>
   </ul>
 </div>
