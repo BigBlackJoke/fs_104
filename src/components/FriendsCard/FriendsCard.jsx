@@ -9,7 +9,7 @@ export default function FriendListItem({ friend: {
         <div className={s.container}>
             <img className={s.avatar} src={avatar} alt="Avatar" width="80" />
             <p className={s.friend_name}>{name}</p>
-            <p className={s.status}>{!isOnline ? 'Offline' : 'Online'}</p>
+            <p className={`${s.status} ${!isOnline ? s.status_offline : s.status_online}`}>{!isOnline ? 'Offline' : 'Online'}</p>
         </div>
     )
 }

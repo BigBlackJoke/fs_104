@@ -1,10 +1,11 @@
+import s from "./TransactionHistoryList.module.css";
 import TransactionHistory from "../TransactionHistory/TransactionHistory";
 
 export default function TransactionHistoryList({ transactions }) {
     return (
-        <table>
+        <table className={s.container}>
   <thead>
-    <tr>
+    <tr className={s.t_head}>
       <th>Type</th>
       <th>Amount</th>
       <th>Currency</th>
@@ -12,15 +13,9 @@ export default function TransactionHistoryList({ transactions }) {
   </thead>
 
   <tbody>
-    <tr>
-        {transactions.map(trans => {
-            return (
-                <td key={trans.id}>
-                    <TransactionHistory transaction = {trans} />
-                </td>
-            )
-        })}
-    </tr>
+    {transactions.map(trans => (
+                    <TransactionHistory key={trans.id} transaction={trans} />
+                ))}
   </tbody>
 </table>
 
